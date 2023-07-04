@@ -1,0 +1,11 @@
+Cypress.Commands.add('fillMandatoryFieldsAndSubmit', function () {
+    cy.get('#firstName').type('Erlã')
+    cy.get('#lastName').type('Lima')
+    cy.get('#email').type('erla.lima@gmail.com')
+    cy.get('#phone').type('71999999999')
+    cy.get('select').select('Blog')
+    cy.get(':nth-child(3) > input').click()
+    cy.get('#phone-checkbox').click()
+    cy.get('#open-text-area').type('Teste')
+    cy.contains('button', 'Enviar').click()
+})
